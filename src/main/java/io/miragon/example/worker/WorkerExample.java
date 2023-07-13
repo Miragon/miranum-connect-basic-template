@@ -8,8 +8,9 @@ public class WorkerExample {
 
     @Worker(type = "greet")
     public WorkerOutput greet(WorkerInput input) {
+        log.info("Received input: " + input);
         String greeting = "Hello " + input.getName() + "!";
-        log.info(greeting);
+        log.info("Sending output: " + greeting);
         return new WorkerOutput(greeting);
     }
 }
