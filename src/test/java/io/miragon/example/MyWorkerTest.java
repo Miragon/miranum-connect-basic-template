@@ -12,10 +12,10 @@ public class MyWorkerTest {
     public void testDoSomething() {
         MyWorker myWorker = new MyWorker();
 
-        DoSomethingCommand doSomethingCommand = new DoSomethingCommand("test");
-        DoSomethingResult expectedDoSomethingResult = new DoSomethingResult("test result");
+        var doSomethingCommand = new MyWorker.DoSomethingCommand("test");
+        var expectedDoSomethingResult = new MyWorker.DoSomethingResult("test result");
 
-        DoSomethingResult actualDoSomethingResult = myWorker.doSomething(doSomethingCommand);
+        MyWorker.DoSomethingResult actualDoSomethingResult = myWorker.doSomething(doSomethingCommand);
 
         assertEquals(expectedDoSomethingResult.getResult(), actualDoSomethingResult.getResult());
     }

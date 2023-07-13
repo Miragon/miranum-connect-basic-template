@@ -3,6 +3,7 @@ package io.miragon.example;
 import io.miragon.miranum.connect.worker.api.Worker;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,18 +17,20 @@ public class MyWorker {
         log.info("Returning result: " + result);
         return new DoSomethingResult(result);
     }
-}
 
-@Getter
-@Setter
-@AllArgsConstructor
-class DoSomethingCommand {
-    private String command;
-}
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class DoSomethingCommand {
+        private String command;
+    }
 
-@Getter
-@Setter
-@AllArgsConstructor
-class DoSomethingResult {
-    private String result;
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class DoSomethingResult {
+        private String result;
+    }
 }
