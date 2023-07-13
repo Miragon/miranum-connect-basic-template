@@ -12,9 +12,9 @@ This template provides the following features:
 
 ## Prerequisites
 
-Before using this template, make sure you have a running instance of Camunda Platform 7 set up.
-This template relies on Camunda Platform 7 for process execution and integration.
-You could easily change to a different process engine by adding the corresponding Miranum Connect adapter dependencies.
+Before using this template, make sure you have a running instance of Camunda Platform 7 or Camunda Platform 8 set up.
+This template includes the necessary dependencies for both versions of Camunda. To switch between Camunda Platform 7
+and Camunda Platform 8, you can update the application.yaml file as described below.
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ To use this template, follow these steps:
     - [Worker](src/main/java/io/miragon/example/MyWorker.java) (rename, implement)
     - [Message Correlation](src/main/java/io/miragon/example/MyMessageCorrelation.java) (rename, implement)
     - [Process Start](src/main/java/io/miragon/example/MyProcessStart.java) (rename, implement)
-3. Ensure that you have a running instance of Camunda Platform 7.
+3. Ensure that you have a running instance of Camunda Platform 7 or Camunda Platform 8.
 4. Build the project using the following command:
 
    ```bash
@@ -44,6 +44,14 @@ To run the tests for this project, execute the following command:
 mvn clean test
 ```
 This command will execute all the unit tests in the project and provide the test results.
+
+
+## Configuration
+
+The project's configuration is defined in the `application.yaml` file. By default, the configuration is set up for
+Camunda Platform 7. If you want to switch to Camunda Platform 8, you can uncomment the relevant properties in the
+`application.yaml` file and comment out the Camunda Platform 7 configuration. 
+Additionally, you have to uncomment the Miranum Connect dependency for Camunda Platform 8 in the `pom.xml` file.
 
 ## Documentation
 
